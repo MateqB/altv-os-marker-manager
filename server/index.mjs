@@ -85,15 +85,3 @@ function mergeDefault(def, given) {
     }
     return given;
 }
-
-setTimeout(() => {
-    let x = -1453.9
-    for(let i = 0; i < 50; i++) {
-        createMarker(randomInt(43), new alt.Vector3(x, -3082, 14), new alt.Vector3(0, 0, 0), new alt.Vector3(0,0,0), new alt.Vector3(1,1,1), new alt.RGBA(randomInt(255), randomInt(255), randomInt(255), 255), { bobUpAndDown: true, drawDistance: 500 })
-        x -= 0.1;
-    }
-}, 200)
-
-function randomInt(max) {
-    return Math.floor(Math.random() * max);
-}
