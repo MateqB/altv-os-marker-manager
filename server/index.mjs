@@ -34,10 +34,6 @@ alt.on('playerConnect', (player) => {
     alt.emitClient(player, 'altv-marker-manager:markerSync', markers)
 })
 
-alt.onClient('playerInteractWithMarker', (player, markerid) => {
-    removeMarker(markerid)
-})
-
 // Functions
 export function createMarker(type, pos, dir, rot, scale, rgba, options) {
     for(let i = 0; i <= markers.size; i++) {
