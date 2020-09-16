@@ -47,18 +47,6 @@ class Marker {
     }
 }
 // Events
-alt.onServer('altv-marker-manager:markerSync', (mrks) => {
-    for(let i = 0; i < markers.size; i++) {
-        if(markers.has(i)) {
-            markers.get(i).destroy();
-            markers.delete(i)
-        }
-    }
-    for(let i = 0; i < mrks.size; i++) {
-        let mrk = mrks.get(i);
-        markers.set(i, new Marker(mrk.id, mrk.type, mrk.pos, mrk.dir, mrk.rot, mrk.scale, mrk.rgba, mrk.options, mrk.colshape))
-    }
-})
 
 alt.onServer('altv-marker-manager:markerCreated', (mrk) => {
     let marker = new Marker(mrk.id, mrk.type, mrk.pos, mrk.dir, mrk.rot, mrk.scale, mrk.rgba, mrk.options, mrk.colshape)
