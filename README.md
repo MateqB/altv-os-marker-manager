@@ -12,15 +12,13 @@ This is server-side marker manager. It allows you to Create/Delete markers on th
 
 ## Installing Dependencies / Installation
 
-**I cannot stress this enough. Ensure you have NodeJS 13+ or you will have problems.**
-
--   [NodeJS 13+](https://nodejs.org/en/download/current/)
+Requirements:
 -   An Existing or New Gamemode
 -   General Scripting Knowledge
 
 Afterwards, simply add the name of this resource to your `server.cfg` resource section.
 
-`atlv-os-marker-manager`
+`altv-os-marker-manager`
 
 Then simply clone this repository into your main server resources folder.
 
