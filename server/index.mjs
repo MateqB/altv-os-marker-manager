@@ -38,10 +38,6 @@ alt.on('playerConnect', (player) => {
     }, 5000)
 })
 
-alt.onClient('playerInteractWithMarker', (player, markerid) => {
-    removeMarker(markerid)
-})
-
 // Functions
 export function createMarker(type, pos, dir, rot, scale, rgba, options) {
     for(let i = 0; i <= markers.size; i++) {
