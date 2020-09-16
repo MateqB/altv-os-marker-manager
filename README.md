@@ -1,6 +1,6 @@
 # Alt:V Marker Manager
 
-Created by Dzeknjak (Jovan Ivanovic)
+Created by Mateq
 
 ---
 
@@ -26,7 +26,7 @@ Then simply clone this repository into your main server resources folder.
 
 ```
 cd resources
-git clone https://github.com/jovanivanovic/altv-os-marker-manager
+git clone https://github.com/MateqB/altv-os-marker-manager
 ```
 
 Ensure your `package.json` includes this property:
