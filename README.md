@@ -4,7 +4,7 @@ Created by Mateq
 
 ---
 
-![](https://imgur.com/a/Gr8zLBq)
+![](https://i.imgur.com/i9NKMNZ.png)
 
 # Description
 
