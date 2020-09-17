@@ -16,10 +16,10 @@ class Marker {
         this.options = options,
         this.colshapepos = colshapepos,
         this.inMarker = false;
+        this.drawMarker = false;
     }
-    interval = alt.everyTick(() => {
-        let dis = distance(alt.Player.local.pos, this.pos);
-        if(dis < this.options.drawDistance) {
+    everytick = alt.everyTick(() => {
+        if(this.drawMarker) {
             native.drawMarker(this.type, this.pos.x, this.pos.y, this.pos.z, this.dir.x, this.dir.y, this.dir.z, this.rot.x, this.rot.y, this.rot.z, this.scale.x, this.scale.y, this.scale.z, this.rgba.r, this.rgba.g, this.rgba.b, this.rgba.a, this.options.bobUpAndDown, this.options.faceCamera, this.options.p19, this.options.rotate, this.options.textureDict, this.options.textureName, this.options.drawOnEnts);
             native.drawRect(0, 0, 0, 0, 0, 0, 0, 0, 0)
             if(this.inMarker && native.isControlJustReleased(0, interactcontrol)) {
@@ -28,6 +28,14 @@ class Marker {
             }
         }
     })
+    interval = alt.setInterval(() => {
+        let dis = distance(alt.Player.local.pos, this.pos);
+        if(dis < this.options.drawDistance) {
+            this.drawMarker = true;
+        } else {
+            this.drawMarker = false;
+        }
+    }, 1000)
     colshapeenterlistener = alt.onServer('playerEnteredColshape', (clpos) => {
         if(distance(clpos, this.colshapepos) < 1) {
             alt.emit('playerEnterMarker', this.id);
@@ -43,7 +51,8 @@ class Marker {
         }
     })
     destroy() {
-        alt.clearEveryTick(this.interval);
+        alt.clearEveryTick(this.everytick);
+        alt.clearInterval(this.interval)
     }
 }
 // Events
