@@ -97,7 +97,7 @@ alt.on('playerInteractWithMarker', (id) => {
 ## Creating a marker
 
 ```javascript
-let marker = MarkerManager.createMarker(1, new alt.Vector3(0, 0, 72), new alt.Vector3(0, 0, 0), new alt.Vector3(0, 0, 0), new alt.Vector3(1, 1, 1), new alt.RGBA(255, 0, 0, 255,{}) 
+let marker = MarkerManager.createMarker(1, new alt.Vector3(0, 0, 72), new alt.Vector3(0, 0, 0), new alt.Vector3(0, 0, 0), new alt.Vector3(1, 1, 1), new alt.RGBA(255, 0, 0, 255),{})
 ```
 
 | Argument                            | Description                                                                |
